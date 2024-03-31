@@ -1,0 +1,8 @@
+import{r as i,P as l,S as m,T as d,_ as t,W as o,U as s,Q as c}from"./index.f50984da.js";import{Q as p}from"./QTable.06a7a269.js";import{Q as u}from"./QPage.f8c8cd3d.js";import{u as f}from"./index.0afad86d.js";import{d as _}from"./typesFormatter.b2f74f68.js";import{k as h}from"./index.fc4b5c32.js";import"./QList.154f72b0.js";import"./format.e4e80033.js";import"./use-timeout.635dab6f.js";const g={class:"page-container"},w=t("h2",{class:"text-center"},"Information & Help",-1),v=t("h5",{class:"subtitle text-center"},"All you need to know",-1),b=t("br",null,null,-1),k={href:"https://ourworldindata.org/travel-carbon-footprint",target:"_blank"},Q=t("p",null,"Here is a table summarizing the values we use:",-1),z={__name:"HelpPage",setup(x){const r=[{name:"name",align:"left",required:!0,label:"Transport Method",field:"name",format:e=>_(e)},{name:"emission",align:"left",label:"CO2 Emission (g/passenger/km)",field:"emissionPerKilometer",format:e=>Math.floor(e*1e3)+" g"}],a=i([]),{onResult:n}=f(h(`
+    query {
+      travelMethodInfo {
+        name
+        emissionPerKilometer
+      }
+    }
+  `));return n(e=>{e.loading||(a.value=e.data.travelMethodInfo)}),(e,y)=>(l(),m(u,{class:"q-pa-md"},{default:d(()=>[t("div",g,[w,v,b,t("p",null,[o("To calculate the emissions associated with a travel, we multiply the distance travelled by the average emission/passenger/km of used transportation method. Our data is retrieved from "),t("a",k,[o(" ourworldindata.org "),s(c,{name:"open_in_new"})]),o(". ")]),Q,s(p,{title:"Emission of different transportation methods",rows:a.value,columns:r,"row-key":"name",dense:"","rows-per-page-options":[10]},null,8,["rows"])])]),_:1}))}};export{z as default};
